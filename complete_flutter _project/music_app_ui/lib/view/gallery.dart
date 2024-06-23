@@ -19,9 +19,9 @@ class _GalleryState extends State<Gallery> {
   int _selectedIndex = 4;
   List screenPages =[
     FavoritePage(),
-    ProfilePage(),
-    ProfilePage(),
-    ProfilePage(),
+    const ProfilePage(),
+   const  ProfilePage(),
+    const ProfilePage(),
   ];
 
   List singlesongsImagedescriptionList = [
@@ -135,8 +135,8 @@ List titleList =[
             ),
           ),
           const SizedBox(height: 15,),
-      
-      
+              
+              
           SmoothPageIndicator(
               axisDirection: Axis.horizontal,
               effect: const ExpandingDotsEffect(
@@ -145,7 +145,7 @@ List titleList =[
                   activeDotColor: Color.fromRGBO(255, 61, 0, 1)),
               controller: _controller,
               count: 3),
-      
+              
               const Padding(
                 padding:  EdgeInsets.only(left: 20,right: 10),
                 child:  Row(
@@ -169,10 +169,10 @@ List titleList =[
                   ],
                 ),
               ),
-      
+              
               const SizedBox(height: 10,),
-      
-              Container(
+              
+              SizedBox(
                 height: 180,
                 width: double.infinity,
                 
@@ -181,18 +181,18 @@ List titleList =[
                   itemCount: imagePath.length,
                   itemBuilder:(context,index)=> GestureDetector(
                     onTap:(){ 
-
+        
                         setState(() {
                           FavoritePage obj = screenPages[0];
                           obj.imagePath = imagePath[index];
                           obj.title = titleList[index];
                           _selectedIndex = 0;
                         });
-
+        
                     }, 
                     child: listViewImage(imagePath:imagePath[index],title:titleList[index],date: 2020,)),),
               ),
-      
+              
                 const SizedBox(height: 5,),
                 const Padding(
                 padding:  EdgeInsets.only(left: 20,right: 10),
@@ -217,7 +217,7 @@ List titleList =[
                   ],
                 ),
               ),
-      
+              
             Expanded(
               child: ListView.builder(
                     
@@ -242,9 +242,9 @@ List titleList =[
               }),
             )
               
-      
+              
         ],
-      ),
+              ),
         bottomNavigationBar: Container(
           height: 75,
           width: 428,
